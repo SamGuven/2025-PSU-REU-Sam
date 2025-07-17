@@ -50,12 +50,12 @@ def read_data(train_val, file_name, city):
     The name of the txt file to write the data to
   """
   
-  file = './../datasets/ECP/old_labels/' + train_val + '/' + city + "/" + file_name
+  file = './../../datasets/ECP/old_labels/' + train_val + '/' + city + "/" + file_name
   with open(file, 'r') as f:
     data = json.load(f)
 
     txt_version = file_name.replace('json', 'txt')
-    final = './../datasets/ECP/labels/' + train_val + '/' + txt_version
+    final = './../../datasets/ECP/labels/' + train_val + '/' + txt_version
     return(data, final)
 
 def process_data(data):
@@ -127,11 +127,11 @@ def write_data(filename, data):
 
 if __name__ == "__main__":
     for train_val in ["train", "val"]:
-        cities = os.listdir('./../datasets/ECP/old_labels/' + train_val + '/') # retrieve all city names
+        cities = os.listdir('./../../datasets/ECP/old_labels/' + train_val + '/') # retrieve all city names
         
         for city in cities:
             # Take all the files in the old city directory, convert them and put them in the new one
-            files = os.listdir('./../datasets/ECP/old_labels/' + train_val + '/'+ city)
+            files = os.listdir('./../../datasets/ECP/old_labels/' + train_val + '/'+ city)
             
             for file in files:
                 print("processing file " + file)
