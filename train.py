@@ -3,6 +3,7 @@ This program is used to train a YOLO model for 600 epochs on ECP data
 
 Written by Allie Hopper, 2024
 Edited by River Johnson, 2025
+Edited by Sam Guven, 2025
 """
 
 from ultralytics import YOLO
