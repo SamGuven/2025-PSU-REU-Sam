@@ -28,6 +28,11 @@ Project
             └ val (val labels - one corresponding to each image)
 
         └ old_labels (folder to put original labels in ECP format before conversion into YOLO format)
+            
+            ├ train (training labels - one corresponding to each image)
+
+            └ val (val labels - one corresponding to each image)
+            
 
 ## Other notes that may be useful:
 Use a [virtual environment](https://docs.python.org/3/library/venv.html) if necessary to install the ultralytics package (if on a remote server)
