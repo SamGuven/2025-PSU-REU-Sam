@@ -26,8 +26,8 @@ print(torch.__version__)
 # --------------------------------- #
 
 # I never want to accidentally run this using the CPU. Disable this check to run on a cpu
-if device == "cpu":
-    exit()
+#if device == "cpu":
+    #exit()
 
 # Load a pretrained YOLO model. For initial training, use "yolov8s.pt"
 # model = YOLO("runs/detect/train6/weights/best.pt")

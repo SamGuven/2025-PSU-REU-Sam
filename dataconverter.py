@@ -8,6 +8,8 @@ Edited by River Johnson, 2025
 Absolute file paths -> relative file paths from current working directory
 (current working directory must be repository directory, otherwise the script will not work)
 Now processes training and validation data together
+
+Edited by Sam Guven, Changed line 138 to use the read data in one call
 """
 
 import json
@@ -135,7 +137,7 @@ if __name__ == "__main__":
             
             for file in files:
                 print("processing file " + file)
-                ecp_data, new_file = read_data(train_val, file, city) # changed to not call read data twice 
+                ecp_data, new_file = read_data(train_val, file, city) # changed to not call read data twice
                 print("new file = " + new_file)
                 write_data(new_file, process_data(ecp_data))
 
