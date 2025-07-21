@@ -79,7 +79,7 @@
 
 # Then to run python files use
 
-## python train.py
+## python3 train.py
 
 # To pull new changes from the github
 
