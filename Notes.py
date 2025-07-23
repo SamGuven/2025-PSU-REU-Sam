@@ -72,6 +72,8 @@
 ## List active sessions -> tmux ls -> Shows running sessions
 ## Reattach to session -> tmux attach -t session_name -> Go back into a running session
 ## Exit a session -> exit (inside tmux) -> Ends session when done
+## tmux kill-server, ends all sessions
+## tmux kill-session -t <session-name>, ends a specific session
 
 # To upload my github to my directory
 
@@ -85,3 +87,9 @@
 
 ## git pull
 
+# Once in the server to login to a specific gpu use this command
+
+## ssh samguv_guest@fab04
+## Password: bsIK7ImB35vhb
+
+### Order should be get on SERVER then TMUX then VE, and I can install packages on the VE

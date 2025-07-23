@@ -107,8 +107,8 @@ def process_data(data):
         #YOLO format requires x_center, y_center, x_dif, and y_dif to define a bounding box
         x_center = (x0 + x1)/2
         y_center = (y0 + y1)/2
-        x_dif = x1 - x_center
-        y_dif = y1 - y_center
+        x_dif = x1 - x0
+        y_dif = y1 - y0
 
         to_return = to_return + (f"{identity} {x_center} {y_center} {x_dif} {y_dif}") + "\n"
 
