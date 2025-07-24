@@ -126,6 +126,25 @@ def write_data(filename, data):
   with open(filename, 'w') as file:
     file.write(data)
 
+def remove_images_without_labels(img_dir, label_dir):
+  """
+
+    @Params:
+      img_dir:
+      label_dir:
+
+  """
+  img_files = [f for f in os.listdir(img_dir) if f.endswith('.png')]
+  label_files = set(os.listdir(label_dir))
+
+  for img_file in img_files:
+      label_file = img_file.replace('.png', '.txt')
+      if label_file not in label_files:
+          img_path = os.path.join(img_dir, img_file)
+          print(f"Removing image without label: {img_file}")
+          os.remove(img_path)
+
+
 
 if __name__ == "__main__":
     for train_val in ["train", "val"]:
@@ -141,4 +160,6 @@ if __name__ == "__main__":
                 print("new file = " + new_file)
                 write_data(new_file, process_data(ecp_data))
 
+remove_images_without_labels('datasets/ECP/img/train', 'datasets/ECP/labels/train')
+remove_images_without_labels('datasets/ECP/img/val', 'datasets/ECP/labels/val')
   # write_data('identities_dict.txt', str(identities))

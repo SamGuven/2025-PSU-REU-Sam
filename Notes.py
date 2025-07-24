@@ -93,3 +93,19 @@
 ## Password: bsIK7ImB35vhb
 
 ### Order should be get on SERVER then TMUX then VE, and I can install packages on the VE
+
+# Installs pip
+
+## python -m ensurepip --upgrade
+
+# To enter scroll mode, and press q to cancel
+
+## Ctrl + b (then) [
+
+# To delete all files that aren't of a specfic type, in a specific file
+
+## find . -type f ! -name "*.txt" -delete
+
+# To delete all empty subfolders
+
+## find . -type d -empty -delete
