@@ -160,6 +160,6 @@ if __name__ == "__main__":
                 print("new file = " + new_file)
                 write_data(new_file, process_data(ecp_data))
 
-remove_images_without_labels('datasets/ECP/img/train', 'datasets/ECP/labels/train')
-remove_images_without_labels('datasets/ECP/img/val', 'datasets/ECP/labels/val')
+remove_images_without_labels('./../../datasets/ECP/img/train', './../../datasets/ECP/labels/train')
+remove_images_without_labels('./../../datasets/ECP/img/val', './../../datasets/ECP/labels/val')
   # write_data('identities_dict.txt', str(identities))
