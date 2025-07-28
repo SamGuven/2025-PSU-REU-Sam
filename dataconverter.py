@@ -26,11 +26,11 @@ identities = {
 }
 
 def read_data(train_val, file_name, city):
-    file = f'../datasets/ECP/old_labels/{train_val}/{city}/{file_name}'
+    file = f'./datasets/ECP/old_labels/{train_val}/{city}/{file_name}'
     with open(file, 'r') as f:
         data = json.load(f)
     txt_version = file_name.replace('json', 'txt')
-    final = f'../datasets/ECP/labels/{train_val}/{txt_version}'
+    final = f'./datasets/ECP/labels/{train_val}/{txt_version}'
     return data, final
 
 def process_data(data):
@@ -73,9 +73,9 @@ def write_data(filename, data):
 
 if __name__ == "__main__":
     for train_val in ["train", "val"]:
-        cities = os.listdir(f'../datasets/ECP/old_labels/{train_val}')
+        cities = os.listdir(f'./datasets/ECP/old_labels/{train_val}')
         for city in cities:
-            files = os.listdir(f'../datasets/ECP/old_labels/{train_val}/{city}')
+            files = os.listdir(f'./datasets/ECP/old_labels/{train_val}/{city}')
             for file in files:
                 print("processing file", file)
                 ecp_data, new_file = read_data(train_val, file, city)
