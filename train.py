@@ -8,6 +8,12 @@ Edited by Sam Guven, 2025
 
 from ultralytics import YOLO
 import torch
+import os
+
+print("Train image dir exists?", os.path.exists("/u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/datasets/ECP/img/train"))
+print("Val image dir exists?", os.path.exists("/u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/datasets/ECP/img/val"))
+print("Sample image file:", os.listdir("/u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/datasets/ECP/img/train")[0])
+print("Sample label file:", os.listdir("/u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/datasets/ECP/labels/train")[0])
 
 
 # ----------- DEBUGGING ----------- #
