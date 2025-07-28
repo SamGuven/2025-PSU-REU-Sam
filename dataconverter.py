@@ -8,8 +8,6 @@ Edited by River Johnson, 2025
 Absolute file paths -> relative file paths from current working directory
 (current working directory must be repository directory, otherwise the script will not work)
 Now processes training and validation data together
-
-Edited by Sam Guven, Changed line 138 to use the read data in one call
 """
 
 import json
@@ -35,8 +33,8 @@ identities = {
   'scooter-group': 15,
   'rider+co-rider': 16,
   'skateboarder': 17,
-  'rider': 18, 
-  'bicycle': 19, 
+  'rider': 18,
+  'bicycle': 19,
   'motorbike': 20
 }
 
@@ -51,13 +49,13 @@ def read_data(train_val, file_name, city):
     The data loaded from the JSON file
     The name of the txt file to write the data to
   """
-  
-  file = './../../datasets/ECP/old_labels/' + train_val + '/' + city + "/" + file_name
+
+  file = './../datasets/ECP/old_labels/' + train_val + '/' + city + "/" + file_name
   with open(file, 'r') as f:
     data = json.load(f)
 
     txt_version = file_name.replace('json', 'txt')
-    final = './../../datasets/ECP/labels/' + train_val + '/' + txt_version
+    final = './../datasets/ECP/labels/' + train_val + '/' + txt_version
     return(data, final)
 
 def process_data(data):
@@ -107,12 +105,12 @@ def process_data(data):
         #YOLO format requires x_center, y_center, x_dif, and y_dif to define a bounding box
         x_center = (x0 + x1)/2
         y_center = (y0 + y1)/2
-        x_dif = x1 - x0
-        y_dif = y1 - y0
+        x_dif = x1 - x_center
+        y_dif = y1 - y_center
 
         to_return = to_return + (f"{identity} {x_center} {y_center} {x_dif} {y_dif}") + "\n"
 
-    
+
   return(to_return)
 
 def write_data(filename, data):
@@ -126,40 +124,20 @@ def write_data(filename, data):
   with open(filename, 'w') as file:
     file.write(data)
 
-def remove_images_without_labels(img_dir, label_dir):
-  """
-
-    @Params:
-      img_dir:
-      label_dir:
-
-  """
-  img_files = [f for f in os.listdir(img_dir) if f.endswith('.png')]
-  label_files = set(os.listdir(label_dir))
-
-  for img_file in img_files:
-      label_file = img_file.replace('.png', '.txt')
-      if label_file not in label_files:
-          img_path = os.path.join(img_dir, img_file)
-          print(f"Removing image without label: {img_file}")
-          os.remove(img_path)
-
-
 
 if __name__ == "__main__":
     for train_val in ["train", "val"]:
-        cities = os.listdir('./../../datasets/ECP/old_labels/' + train_val + '/') # retrieve all city names
-        
+        cities = os.listdir('./../datasets/ECP/old_labels/' + train_val + '/') # retrieve all city names
+
         for city in cities:
             # Take all the files in the old city directory, convert them and put them in the new one
-            files = os.listdir('./../../datasets/ECP/old_labels/' + train_val + '/'+ city)
-            
+            files = os.listdir('./../datasets/ECP/old_labels/' + train_val + '/'+ city)
+
             for file in files:
                 print("processing file " + file)
-                ecp_data, new_file = read_data(train_val, file, city) # changed to not call read data twice
+                ecp_data, new_file = read_data(file, city)[0], read_data(train_val, file, city)[1]
                 print("new file = " + new_file)
                 write_data(new_file, process_data(ecp_data))
 
-remove_images_without_labels('./../../datasets/ECP/img/train', './../../datasets/ECP/labels/train')
-remove_images_without_labels('./../../datasets/ECP/img/val', './../../datasets/ECP/labels/val')
   # write_data('identities_dict.txt', str(identities))
+
