@@ -23,7 +23,10 @@
 
 # Doing this will allow you to unzip a file into a spot in my directory that's what the -d means
 
-##  unzip /stash/portal/eurocity/ECP_day_img_test.zip -d /u/samguv_guest/eurocity_data
+## unzip /stash/portal/eurocity/ECP_day_img_train.zip -d /u/samguv_guest/datasets/
+## unzip /stash/portal/eurocity/ECP_day_img_val.zip -d /u/samguv_guest/datasets/
+## unzip /stash/portal/eurocity/ECP_day_labels_train.zip -d /u/samguv_guest/datasets/
+## unzip /stash/portal/eurocity/ECP_day_labels_val.zip -d /u/samguv_guest/datasets/
 
 # Use this to create a new folder
 
@@ -109,3 +112,7 @@
 # To delete all empty subfolders
 
 ## find . -type d -empty -delete
+
+# To clear the cache files
+
+## find /u/samguv_guest/datasets/ECP/ -name "*.cache" -delete

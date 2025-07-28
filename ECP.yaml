@@ -1,7 +1,7 @@
 # Train/val/test sets
-path: ../../datasets/ECP  # dataset root dir
-train: img/train  # train images (relative to 'path')
-val: img/val  # val images (relative to 'path')
+# path: ../../datasets/ECP  # dataset root dir
+train: /u/samguv_guest/datasets/ECP/img/train
+val: /u/samguv_guest/datasets/ECP/img/val
 test:  # test images (optional)
 
 # Classes
