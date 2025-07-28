@@ -16,6 +16,7 @@ print("Sample image file:", os.listdir("/u/samguv_guest/2025-PSU-REU-Sam/2025-PS
 print("Sample label file:", os.listdir("/u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/datasets/ECP/labels/train")[0])
 
 
+
 # ----------- DEBUGGING ----------- #
 
 # Get cpu, gpu or mps device for training.
