@@ -9,7 +9,8 @@ To be used with filesystem structure:
 
 Project
 
-├ 2025-PSU-REU-Sam (this code)
+├ 2025-PSU-REU-Sam 
+    └ 2025-PSU-REU-Sam (this code)
 
 ├	datasets (any datasets intended to be used for training or validation)
 
