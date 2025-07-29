@@ -115,10 +115,12 @@
 
 # To clear the cache files
 
-## find /u/samguv_guest/datasets/ECP/ -name "*.cache" -delete
+## find /u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/datasets/ECP/ -name "*.cache" -delete
 
 # Maybe Clear this if needed
 
 ## WARNING ⚠️  no labels found in detect set, can not compute metrics without labels
 #Speed: 0.1ms preprocess, 2.9ms inference, 0.0ms loss, 0.2ms postprocess per image
 # Results saved to /u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/runs/detect/train18
+
+

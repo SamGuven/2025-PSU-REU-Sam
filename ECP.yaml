@@ -1,7 +1,7 @@
 # Train/val/test sets
-# path: ../../datasets/ECP  # dataset root dir
-train: /u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/datasets/ECP/img/train
-val: /u/samguv_guest/2025-PSU-REU-Sam/2025-PSU-REU-Sam/datasets/ECP/img/val
+path: ../../datasets/ECP  # dataset root dir
+train: img/train  # train images (relative to 'path')
+val: img/val  # val images (relative to 'path')
 test:  # test images (optional)
 
 # Classes
